@@ -17,12 +17,12 @@ int main() {
         if(tree.tree_depth() < 0) {
             throw("Дерево_пусто!\n");
         } else { 
-            cout<<"Глубина дерева: "<<tree.tree_depth()<<endl;
+            cout<<"Глубина дерева: "<<tree.tree_depth()<<"; ";
         } 
         if(tree.depth(0) < 0) {
             throw Exception{"Звена с таким ключом не существует!\n"};
         } else {
-            cout<<"Глубина 0-ого эл-та: "<<tree.depth(0)<<endl;
+            cout<<"Глубина 0-ого эл-та: "<<tree.depth(0)<<"; ";
         }
         if(tree.depth(0) < 0) { 
             throw Exception{"Звена с таким ключом не существует!\n"};
@@ -30,7 +30,7 @@ int main() {
             cout<<" Глубина 15-ого эл-та: "<< tree.depth(15)<<endl;
         }
         if(tree.search(7,result)) {
-            cout<<result<<endl; 
+            cout<<"Элемент с ключом 7: "<<result<<endl; 
         } else {
             throw Exception{"Звена с таким ключом не существует!\n"};
         }
@@ -47,7 +47,11 @@ int main() {
     tree.inorderTraversal();
     cout << endl;
     tree.printTree();
-
+    AVLTree<int,int> left_tree;
+    AVLTree<int,int> right_tree;
+    tree.split(0,&left_tree,&right_tree);
+    left_tree.printTree();
+    right_tree.printTree();
     // AVLTree<int, string> Database;
     // int id;
     // string data;

@@ -212,6 +212,30 @@
     }
 
     template<class Key, class Value>
+    void AVLTree<Key,Value>::split(Key key, AVLTree* leftSubtree, AVLTree* rightSubtree) {
+        if (root == nullptr)
+            return;
+
+        // Вставим ключ в дерево
+        root = insert(root, key, root->value);
+
+        // Зададим два новых дерева, в которых будем хранить узлы с ключами меньше и больше key
+        leftSubtree->root = nullptr;
+        rightSubtree->root = nullptr;
+
+        // Разделяем AVL-дерево по ключу
+        if (root->left != nullptr)
+            leftSubtree->root = root->left;
+
+        if (root->right != nullptr)
+            rightSubtree->root = root->right;
+
+        // Очищаем память
+        delete root;
+        root = nullptr;
+    }
+    
+    template<class Key, class Value>
     void AVLTree<Key, Value>::destroyTree(Node* node) {
         if (node != nullptr) {
             destroyTree(node->left);

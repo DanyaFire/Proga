@@ -225,6 +225,8 @@ public:
         return iter;
     } 
 
+    void split(Key key, AVLTree* leftSubtree, AVLTree* rightSubtree);
+
     ~AVLTree() {
         destroyTree(root);
     }
