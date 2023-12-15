@@ -1,0 +1,13 @@
+0 Bavin_Stanislav
+1 Vasinkov_Nikita
+2 Kiseleva_Ksenia
+3 Kozlenko_Daniil
+5 Kuzmicheva_Mary
+6 Martyushova_Kira
+7 Morozov_Andrey
+9 Romanovskiy_Ilya
+10 Sintsov_Michail
+11 Serikov_Alexander
+13 Tarasov_Daniil
+15 Chernoshchyokova_Alina
+16 Shishkov_Egor
