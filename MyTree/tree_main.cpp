@@ -9,49 +9,52 @@ int main() {
     for(int i = 0; i < 10; i++) {
         tree.insert(i, i-100);
     }
-    for(AVLTree<int,int>::iterator i = tree.begin(); i != tree.end(); ++i) {
-        cout<<"("<<*i<<")";
-    }
-    cout<<endl;
-    try {
-        if(tree.tree_depth() < 0) {
-            throw("Дерево_пусто!\n");
-        } else { 
-            cout<<"Глубина дерева: "<<tree.tree_depth()<<"; ";
-        } 
-        if(tree.depth(0) < 0) {
-            throw Exception{"Звена с таким ключом не существует!\n"};
-        } else {
-            cout<<"Глубина 0-ого эл-та: "<<tree.depth(0)<<"; ";
-        }
-        if(tree.depth(0) < 0) { 
-            throw Exception{"Звена с таким ключом не существует!\n"};
-        } else {
-            cout<<" Глубина 15-ого эл-та: "<< tree.depth(15)<<endl;
-        }
-        if(tree.search(7,result)) {
-            cout<<"Элемент с ключом 7: "<<result<<endl; 
-        } else {
-            throw Exception{"Звена с таким ключом не существует!\n"};
-        }
-        tree.printTree();
-        tree.remove(7);
-        if(tree.search(7,result)) {
-            cout<<result<<endl; 
-        } else { 
-            throw Exception{"Звена с таким ключом не существует!\n"};
-        }
-    } catch(const Exception& ex) {
-        cout<<ex.getMessage()<<endl;
-    }
-    tree.inorderTraversal();
-    cout << endl;
+    // for(AVLTree<int,int>::iterator i = tree.begin(); i != tree.end(); ++i) {
+    //     cout<<"("<<*i<<")";
+    // }
+    //cout<<endl;
+    // try {
+    //     if(tree.tree_depth() < 0) {
+    //         throw("Дерево_пусто!\n");
+    //     } else { 
+    //         cout<<"Глубина дерева: "<<tree.tree_depth()<<"; ";
+    //     } 
+    //     if(tree.depth(0) < 0) {
+    //         throw Exception{"Звена с таким ключом не существует!\n"};
+    //     } else {
+    //         cout<<"Глубина 0-ого эл-та: "<<tree.depth(0)<<"; ";
+    //     }
+    //     if(tree.depth(0) < 0) { 
+    //         throw Exception{"Звена с таким ключом не существует!\n"};
+    //     } else {
+    //         cout<<" Глубина 15-ого эл-та: "<< tree.depth(15)<<endl;
+    //     }
+    //     if(tree.search(7,result)) {
+    //         cout<<"Элемент с ключом 7: "<<result<<endl; 
+    //     } else {
+    //         throw Exception{"Звена с таким ключом не существует!\n"};
+    //     }
+    //     tree.printTree();
+    //     tree.remove(7);
+    //     if(tree.search(7,result)) {
+    //         cout<<result<<endl; 
+    //     } else { 
+    //         throw Exception{"Звена с таким ключом не существует!\n"};
+    //     }
+    // } catch(const Exception& ex) {
+    //     cout<<ex.getMessage()<<endl;
+    // }
+    // tree.inorderTraversal();
+    // cout << endl;
     tree.printTree();
     AVLTree<int,int> left_tree;
     AVLTree<int,int> right_tree;
     tree.split(0,&left_tree,&right_tree);
     left_tree.printTree();
     right_tree.printTree();
+    cout<<endl;
+    print(left_tree);
+    print_ref(left_tree);
     // AVLTree<int, string> Database;
     // int id;
     // string data;

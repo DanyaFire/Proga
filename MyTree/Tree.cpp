@@ -212,7 +212,7 @@
     }
 
     template<class Key, class Value>
-    void AVLTree<Key,Value>::split(Key key, AVLTree* leftSubtree, AVLTree* rightSubtree) {
+    void AVLTree<Key,Value>::split(const Key& key, AVLTree* leftSubtree, AVLTree* rightSubtree) {
         if (root == nullptr)
             return;
 

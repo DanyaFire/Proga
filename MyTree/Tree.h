@@ -67,11 +67,32 @@ private:
     // Функция для вывода дерева на экран
     void printTree(Node* root, string prefix = "", bool isLeft = true);
 
+    // Вспомогательная функция для рекурсивного копирования узлов дерева
+    Node* copyNode(Node* node) {
+        if (node == nullptr) {
+            return nullptr;
+        }
+        Node* temp = newNode(node->key, node->value);
+        temp->left = copyNode(node->left);
+        temp->right = copyNode(node->right);
+        temp->depth = node->depth;
+        return temp;
+    }
+
     // Удаление некоторой части дерева
     void destroyTree(Node* node);
 public:
     AVLTree() {
         root = nullptr;
+    }
+
+    // Конструктор копирования AVL-дерева
+    AVLTree(const AVLTree& other) {
+        if (other.root == nullptr) {
+            root = nullptr;
+        } else {
+            root = copyNode(other.root);
+        }
     }
 
     // Функция для вставки ключа в AVL-дерево
@@ -175,7 +196,10 @@ public:
         iterator(Node* root) {            
             if (root == nullptr) return;
             st.push(root);            
-            while (st.peek()->left) st.push(st.peek()->left);
+            while (st.peek()->left) {
+            st.push(st.peek()->left);
+            //st.print();
+            }
         }        
         
         Key operator*() const {
@@ -183,7 +207,8 @@ public:
             return st.peek()->key;
         }
 
-        iterator& operator++() {           
+        iterator& operator++() {     
+            //st.print();      
             if (st.peek()->right) {
                 st.push(st.peek()->right);                
                 
@@ -192,10 +217,11 @@ public:
                 return *this;
             }
             Node* tmp = st.pop();
-            
+            //st.print();
             if(st.empty()) return *this;
             
             while (st.peek()->right == tmp) {
+                //printf("Тут");
                 tmp = st.pop();
                 
                 if (st.empty()) return *this;
@@ -225,7 +251,7 @@ public:
         return iter;
     } 
 
-    void split(Key key, AVLTree* leftSubtree, AVLTree* rightSubtree);
+    void split(const Key& key, AVLTree* leftSubtree, AVLTree* rightSubtree);
 
     ~AVLTree() {
         destroyTree(root);
@@ -242,6 +268,18 @@ public:
     return msg.c_str();
   }
 };
+
+template<class Key, class Value>
+void print(AVLTree<Key,Value> a) {
+    a.printTree();
+}
+
+    
+template<class Key, class Value>
+void print_ref(AVLTree<Key,Value>& a) {
+
+    a.printTree();
+}
 
 // template<class Key, class Value>
 // ostream& operator<<(ostream& os, const pair<Key, Value>& pair) {
