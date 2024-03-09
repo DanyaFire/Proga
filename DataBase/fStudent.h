@@ -25,13 +25,16 @@ namespace DB {
         birthday data;
         int region;
         int finish_school;
+        std::vector<std::string> obj;
+        std::vector<int> marks;
+        double mid_mark;
 
-        fStudent(int i, std::string fn, std::string n, std::string mn, int reg, birthday dt, int year): 
-        id(i), fam_name(fn), name(n), mid_name(mn), region(reg), data(dt), finish_school(year) {}
+        fStudent(int i, std::string fn, std::string n, std::string mn, int reg, birthday dt, int year, std::vector<std::string> o, std::vector<int> m, double srb): 
+        id(i), fam_name(fn), name(n), mid_name(mn), region(reg), data(dt), finish_school(year), obj(o), marks(m), mid_mark(srb) {}
         
         std::string print() const {
             std::ostringstream str; //высокоуровневый вывод потока строк
-            str << std::setfill('0') << std::setw(1) << id << " | " << region << " | " << fam_name << " | " << name << " | " << mid_name << " | " << data.day << "." << data.month << "." << data.byear << " | " << finish_school << " | ";
+            str << std::setfill('0') << std::setw(1) << id << " | " << region << " | " << fam_name << " | " << name << " | " << mid_name << " | " << data.day << "." << data.month << "." << data.byear << " | " << finish_school << " | " << obj[0] << " | " << obj[1] << " | " << obj[2] << " | " << obj[3] << " | " << marks[0] << " | " << marks[1] << " | " << marks[2] << " | " << marks[3] << " | " << mid_mark; 
             return str.str(); // конвертировали всё в строку
         }
 

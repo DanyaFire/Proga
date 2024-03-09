@@ -7,6 +7,7 @@ void DB::generator(int count) {
     std::vector<std::string> names;
     std::vector<std::string> midnames;
     std::vector<std::string> objects;
+    std::vector<int> marks(4);
     std::ifstream fnames_file("family_names.txt");
     std::ifstream names_file("names.txt");
     std::ifstream mnames_file("mid_names.txt");
@@ -20,6 +21,7 @@ void DB::generator(int count) {
     char gender;
     birthday data;
     int finish;
+    double srb = 0;
 
     while(!(fnames_file.eof() || names_file.eof() || mnames_file.eof())) {
         
@@ -71,14 +73,21 @@ void DB::generator(int count) {
             data.day = 1 + rand() % 31;
         }
 
-        finish = 1944 + rand() % 80; 
-        auto future_student = new DB::fStudent(id,f,n,m,region,data,finish);
+        finish = 16 + data.byear + rand() % 3; 
+        srb = 0;
+        for(int j = 0; j < 4; j++) {
+            marks[j] = 70 + rand() % 30;
+            srb += marks[j];
+        }
+        srb /= 4;
+
+        auto future_student = new DB::fStudent(id,f,n,m,region,data,finish,objects,marks,srb);
 
         out << future_student->print();
 
-        for(int s = 0; s < 4; s++) out << objects[s] << " | ";
+        // for(int s = 0; s < 4; s++) out << objects[s] << " | ";
 
-        for(int j = 0; j < 4; j++) out << 70 + rand() % 30 << " | ";
+        // for(int j = 0; j < 4; j++) out << 70 + rand() % 30 << " | ";
         out<<std::endl;
         id++;
     }
@@ -87,6 +96,7 @@ void DB::generator(int count) {
     names.clear();
     midnames.clear();
     objects.clear();
+    marks.clear();
     names_file.close();
     fnames_file.close();
     mnames_file.close();
