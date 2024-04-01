@@ -1,4 +1,4 @@
-Русский(язык)
-Математика(профиль)
-Физика
-Математика(ДВИ)
+Russian_Language
+Mathematics_pro
+Physics
+Mathematics_DVI

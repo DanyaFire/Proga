@@ -1,3 +1,10 @@
-0 | 37 | Гусев | Леонид | Глебович | 15.3.1935 | 1956 | Русский(язык) | Математика(профиль) | Физика | Математика(ДВИ) | 73 | 79 | 95 | 86 | 
-1 | 26 | Бабинa | Полина | Степановна� | 13.2.1948 | 1991 | Русский(язык) | Математика(профиль) | Физика | Математика(ДВИ) | 90 | 83 | 73 | 75 | 
-2 | 72 | Смирновa | Анна | Олеговна� | 7.9.1987 | 1979 | Русский(язык) | Математика(профиль) | Физика | Математика(ДВИ) | 75 | 76 | 77 | 76 | 
+00000|52|Ivanova|Maria|Romanovna|14042002|2020|Russian_Language|Mathematics_pro|Physics|Mathematics_DVI|84|98|77|84|85.75
+00001|88|Seleznev|Michael|Fyodorovich|2062000|2018|Russian_Language|Mathematics_pro|Physics|Mathematics_DVI|73|82|97|74|81.5
+00002|87|Potapova|Nina|Yurievna|3011975|1992|Russian_Language|Mathematics_pro|Physics|Mathematics_DVI|99|88|87|76|87.5
+00003|8|Nesterova|Natalya|Artemievna|20081988|2006|Russian_Language|Mathematics_pro|Physics|Mathematics_DVI|90|71|71|81|78.25
+00004|47|Zhurova|Ksenia|Vasilyevna|29072006|2023|Russian_Language|Mathematics_pro|Physics|Mathematics_DVI|82|86|77|90|83.75
+00005|70|Nikolaev|Michael|Vladimirovich|24071945|1963|Russian_Language|Mathematics_pro|Physics|Mathematics_DVI|93|89|97|85|91
+00006|30|Burov|Anatoliy|Ivanovich|19101993|2010|Russian_Language|Mathematics_pro|Physics|Mathematics_DVI|91|97|73|98|89.75
+00007|42|Panova|Valentina|Stanislavovna|24051979|1996|Russian_Language|Mathematics_pro|Physics|Mathematics_DVI|80|80|89|77|81.5
+00008|20|Kireev|Stepan|Vsevolodovich|17021969|1987|Russian_Language|Mathematics_pro|Physics|Mathematics_DVI|96|76|75|85|83
+00009|33|Zimina|Elena|Konstantinovna|16061942|1958|Russian_Language|Mathematics_pro|Physics|Mathematics_DVI|90|79|92|96|89.25

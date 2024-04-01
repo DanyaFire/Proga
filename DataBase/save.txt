@@ -1,0 +1,14 @@
+id, Region, Surname, Name, Middle Name, Birthday, Finish Of School, Objects, Marks, Middle Mark
+0 | 52 | Ivanova | Maria | Romanovna | 14.4.2002 | 2020 | Russian_Language | Mathematics_pro | Physics | Mathematics_DVI | 84 | 98 | 77 | 84 | 85.750000
+1 | 88 | Seleznev | Michael | Fyodorovich | 2.6.2000 | 2018 | Russian_Language | Mathematics_pro | Physics | Mathematics_DVI | 73 | 82 | 97 | 74 | 81.500000
+2 | 87 | Potapova | Nina | Yurievna | 3.1.1975 | 1992 | Russian_Language | Mathematics_pro | Physics | Mathematics_DVI | 99 | 88 | 87 | 76 | 87.500000
+3 | 8 | Nesterova | Natalya | Artemievna | 20.8.1988 | 2006 | Russian_Language | Mathematics_pro | Physics | Mathematics_DVI | 90 | 71 | 71 | 81 | 78.250000
+4 | 47 | Zhurova | Ksenia | Vasilyevna | 29.7.2006 | 2023 | Russian_Language | Mathematics_pro | Physics | Mathematics_DVI | 82 | 86 | 77 | 90 | 83.750000
+5 | 70 | Nikolaev | Michael | Vladimirovich | 24.7.1945 | 1963 | Russian_Language | Mathematics_pro | Physics | Mathematics_DVI | 93 | 89 | 97 | 85 | 91.000000
+6 | 30 | Burov | Anatoliy | Ivanovich | 19.10.1993 | 2010 | Russian_Language | Mathematics_pro | Physics | Mathematics_DVI | 91 | 97 | 73 | 98 | 89.750000
+7 | 42 | Panova | Valentina | Stanislavovna | 24.5.1979 | 1996 | Russian_Language | Mathematics_pro | Physics | Mathematics_DVI | 80 | 80 | 89 | 77 | 81.500000
+8 | 20 | Kireev | Stepan | Vsevolodovich | 17.2.1969 | 1987 | Russian_Language | Mathematics_pro | Physics | Mathematics_DVI | 96 | 76 | 75 | 85 | 83.000000
+9 | 33 | Zimina | Elena | Konstantinovna | 16.6.1942 | 1958 | Russian_Language | Mathematics_pro | Physics | Mathematics_DVI | 90 | 79 | 92 | 96 | 89.250000
+10 | 52 | Ivanov | Andrey | Ivanovich | 10.11.1981 | 1999 | Russian_Language | Mathematics_pro | Physics | Mathematics_DVI | 76 | 83 | 97 | 100 | 89.000000
+11 | 52 | Ivanov | Ivan | Ivanovich | 10.11.1981 | 1999 | Russian_Language | Mathematics_pro | Physics | Mathematics_DVI | 76 | 83 | 97 | 100 | 89.000000
+12 | 52 | Ivanov | Ilya | Alexeyevich | 10.11.1981 | 1999 | Russian_Language | Mathematics_pro | Physics | Mathematics_DVI | 76 | 83 | 97 | 100 | 89.000000

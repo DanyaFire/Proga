@@ -16,17 +16,14 @@ void DB::generator(int count) {
 
     srand(time(NULL));
 
-    int id = 0, region;
+    int id = 0, region, data, day, month, byear, finish;
     std::string f, n, m, o;
     char gender;
-    birthday data;
-    int finish;
-    double srb = 0;
 
     while(!(fnames_file.eof() || names_file.eof() || mnames_file.eof())) {
         
-        fnames_file >> m;
-        fnames.push_back(m);
+        fnames_file >> f;
+        fnames.push_back(f);
         
         names_file >> n;
         names.push_back(n);
@@ -40,6 +37,11 @@ void DB::generator(int count) {
         }
     }
 
+    names_file.close();
+    fnames_file.close();
+    mnames_file.close();
+    objects_file.close();
+
     for(int i = 0; i < count; i++) {
         int N = rand() % names.size();
         f = fnames[rand() % fnames.size()];
@@ -49,47 +51,46 @@ void DB::generator(int count) {
         if(N >= names.size()/2){
             gender = 'G';
             f += "a";
-            size_t pos = m.find("ич");
+            size_t pos = m.find("ich");
             if (pos != std::string::npos) {
-                m.replace(pos, 3, "на");
+                m.replace(pos, 3, "na");
             }
         } else {
             gender = 'M';
         }
 
-        region = rand() % 89;
+        region = 1 + rand() % 89;
 
-        data.byear = 1924 + rand() % 100; 
-        data.month = 1 + rand() % 12;
-        if(data.month == 2) {
-            data.day = 1 + rand() % 29;
-        } else if(data.month % 2 == 0 && data.month != 2 && data.month < 8) {
-            data.day = 1 + rand() % 30;
-        } else if(data.month % 2 == 0 && data.month >= 8) {
-            data.day = 1 + rand() % 31;
-        } else if(data.month % 2 == 1 && data.month > 8) {
-            data.day = 1 + rand() % 30;
+        byear = 1924 + rand() % 83; 
+        month = 1 + rand() % 12;
+
+        if(month == 2) {
+            day = 1 + rand() % 29;
+        } else if(month % 2 == 0 && month != 2 && month < 8) {
+            day = 1 + rand() % 30;
+        } else if(month % 2 == 0 && month >= 8) {
+            day = 1 + rand() % 31;
+        } else if(month % 2 == 1 && month > 8) {
+            day = 1 + rand() % 30;
         } else {
-            data.day = 1 + rand() % 31;
+            day = 1 + rand() % 31;
         }
+        month *= 10000;
+        day *= 1000000; 
 
-        finish = 16 + data.byear + rand() % 3; 
-        srb = 0;
+        data = day + month + byear;
+        finish = 16 + byear + rand() % 3; 
         for(int j = 0; j < 4; j++) {
-            marks[j] = 70 + rand() % 30;
-            srb += marks[j];
+            marks[j] =  70 + rand() % 30;
         }
-        srb /= 4;
 
-        auto future_student = new DB::fStudent(id,f,n,m,region,data,finish,objects,marks,srb);
 
-        out << future_student->print();
+        auto future_student = new fStudent(id,region,f,n,m,data,finish, objects[0], objects[1], objects[2], objects[3], marks[0], marks[1], marks[2], marks[3], (marks[0] + marks[1] + marks[2] + marks[3])/4.);
 
-        // for(int s = 0; s < 4; s++) out << objects[s] << " | ";
-
-        // for(int j = 0; j < 4; j++) out << 70 + rand() % 30 << " | ";
+        out << future_student->print_to_gen();
         out<<std::endl;
         id++;
+        delete future_student;
     }
     
     fnames.clear();
@@ -97,9 +98,5 @@ void DB::generator(int count) {
     midnames.clear();
     objects.clear();
     marks.clear();
-    names_file.close();
-    fnames_file.close();
-    mnames_file.close();
-    objects_file.close();
     out.close();
 }
