@@ -1,5 +1,5 @@
 TARGET = Generator
-OBJS = Generator.o database_main.o Database.o
+OBJS = Generator.o database_main.o Database.o Parsing.o
 
 all: $(TARGET)
 
@@ -14,6 +14,9 @@ database_main.o: database_main.cpp DataBase.h Generator.h fStudent.h
 
 Database.o: Database.cpp DataBase.h Generator.h fStudent.h
 	g++ -c Database.cpp
+
+Parsing.o: Parsing.cpp DataBase.h Generator.h fStudent.h
+	g++ -c Parsing.cpp
 
 clean:
 	rm *.o

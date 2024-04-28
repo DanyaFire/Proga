@@ -10,6 +10,8 @@
 #include <sstream>
 #include <algorithm>
 
+int parsing();
+
 namespace DB {
     struct fStudent {
         int id;
@@ -34,7 +36,7 @@ namespace DB {
             return str.str(); // конвертировали всё в строку
         }
 
-        std::string getCSVRepr () const { // Просто всё представили в виде: "1; Джон; Doe; 2; 101; 1; Нью-Йорк" 
+        std::string getCSVRepr () const {
             return std::to_string(id) + " | " + std::to_string(region) + " | " + fam_name + " | " + name + " | " + mid_name + " | " + std::to_string(data / 1000000) + "." + std::to_string((data / 10000) % 100) + "." + std::to_string(data % 10000) + " | " + std::to_string(finish_school) + " | " + obj1 + " | " + obj2 + " | " + obj3 + " | " + obj4 + " | " + std::to_string(mark1) + " | " + std::to_string(mark2) + " | " + std::to_string(mark3) + " | " + std::to_string(mark4) + " | " + std::to_string(mid_mark);
         }
 

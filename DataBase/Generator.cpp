@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 
-void DB::generator(int count) {
+bool DB::generator(int count) {
     std::vector<std::string> fnames;
     std::vector<std::string> names;
     std::vector<std::string> midnames;
@@ -99,4 +99,5 @@ void DB::generator(int count) {
     objects.clear();
     marks.clear();
     out.close();
+    return true;
 }

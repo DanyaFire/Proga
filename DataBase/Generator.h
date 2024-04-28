@@ -3,9 +3,12 @@
 
 #include "DataBase.h"
 #include "fStudent.h"
+#include <list>
+
+int parsing();
 
 namespace DB {
-    void generator (int count);
+    bool generator (int count);
 }
 
 #endif //PROJECT_GENERATOR_H

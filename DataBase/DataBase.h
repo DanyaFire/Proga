@@ -8,16 +8,16 @@ namespace DB {
     public:
         DB();
         DB(const DB& other_BD);
-        void loadDB(const std::string& filename);
-        std::string printDB();
-        void saveDB(const std::string& filename);
+        bool loadDB(const std::string& filename);
+        void printDB(const std::string& filename);
+        bool saveDB();
         void add(fStudent* student);
-        DB* select(const std::string& fnamer, const std::string& namer, const std::string& mnamer, const int& ren, const int& birthday, const int& finish, const std::string& obj1, const std::string& obj2, const std::string& obj3, const std::string& obj4, int mark1, int mark2, int mark3, int mark4, double middle_mark, int mask);
-        int add(const std::string& fnamer, const std::string& namer, const std::string& mnamer, const int& ren, const int& birthday, const int& finish, const std::string& obj1, const std::string& obj2, const std::string& obj3, const std::string& obj4, int& mark1, int& mark2, int& mark3, int& mark4, double middle_mark);
+        DB* select(const std::string& fnamer, const std::string& namer, const std::string& mnamer, const int& ren, const int& birthday, const int& finish, int mark1, int mark2, int mark3, int mark4, double middle_mark, int mask);
+        bool add(const std::string& fnamer, const std::string& namer, const std::string& mnamer, const int& ren, const int& birthday, const int& finish, int& mark1, int& mark2, int& mark3, int& mark4, double middle_mark);
         int getFreeID();
+        void sort();
         DB& operator=(const DB& other_DB);
         ~DB();
-        //конструктор копирования и оператор присваивания
     };
 }
 #endif
